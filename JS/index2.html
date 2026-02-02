@@ -1,0 +1,23 @@
+<!-- Inline event handlers (not recommended) -->
+<button onclick="handleClick()">Click me</button>
+<input onchange="handleChange(this.value)" />
+<form onsubmit="return handleSubmit(event)">
+    <input type="text" name="username" />
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+function handleClick() {
+    console.log('Button clicked via inline handler');
+}
+
+function handleChange(value) {
+    console.log('Input changed:', value);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    console.log('Form submitted');
+    return false; // Prevent default submission
+}
+</script>

@@ -1,0 +1,103 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 class="hh1" >My webpage</h1>
+    
+     
+        <button id="btn"   > click me  </button>
+        <br>  <br>
+
+    <form id="myform" >
+      
+        <button type="submit" > submit</button>
+
+    </form>
+
+
+    <!-- Event bubbling  -->
+
+    <ul class="parent" >
+        <li> List 1 </li>
+        <li> List 2 </li>
+        <li> List 3 </li>
+        <li> List 4 </li>
+    </ul>
+
+<div class="container" >
+    <h3>  Creating and adding element </h3>
+</div>
+    <script>
+ 
+    let hh1 = document.querySelector(".hh1");
+    let btn = document.querySelector("#btn");
+    let btn1 = document.getElementById("btn");
+
+    btn.addEventListener('click' , ()=>{
+        hh1.innerHTML= "<h1> hello </h1>";
+        hh1.style.color="red";
+        hh1.style.backgroundColor="blue"
+        hh1.textContent="shjcfiej"
+        console.log("Button clicked ");
+    })
+
+    hh1.addEventListener("mouseover" , ()=>{
+        console.log("mouse ooooovoerroeor")
+    })
+
+    document.addEventListener('keydown', function(event) {
+    console.log('Key pressed:', event.key);
+    console.log('Key code:', event.keyCode);
+    console.log('Ctrl key:', event.ctrlKey);
+    console.log('Shift key:', event.shiftKey);
+    console.log('Alt key:', event.altKey);
+});
+
+
+let form = document.querySelector("#myform");
+
+form.addEventListener("submit" , (event)=>{
+
+    event.preventDefault();
+    console.log("Form submitted");
+})
+
+
+
+
+////// Event Bubbling and Event Delegation 
+
+let parent = document.querySelector(".parent");
+
+parent.addEventListener("click" , (event)=>{
+    event.target.style.color="red";
+    event.target.remove();  // comment this if donot want to remove the li on click 
+    console.log(event.target.textContent)
+})
+
+
+let container = document.querySelector(".container");
+
+let newelement = document.createElement("p");
+
+/// adding property to new element
+
+newelement.className  = "newp";
+newelement.style.color="red"
+newelement.id = "newpid";
+newelement.textContent = "Hello, I'm new!";
+
+/// adding element 
+
+container.appendChild(newelement);
+
+    </script>
+</body>
+</html>
