@@ -17,6 +17,6 @@
 14 SessionStorage ( only red , not used now a days )
 15 cookies ( Do later while doing backend  )
 16 Array Methods 
-17 jQuery ( Do Later )
-18 JS OOPs ( Do Later )
+17 jQuery ( Do Later ) 
+18 JS OOPs ( Do Later ) done Basics --> Class , constructor , inheritance , static variables , super keyword , create object 
 19 ENV ( Important )

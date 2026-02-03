@@ -27,5 +27,6 @@ Here I will write the topics
 // LocalStorage , sessionStorage 
 // cookies 
 // Array Methods 
+// JS OOPs ( Do Later ) done Basics --> Class , constructor , inheritance , static variables , super keyword , create object 
 
  
