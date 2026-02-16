@@ -1,33 +1,30 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import {useForm} from 'react-hook-form';
+
 
 function App() {
   const [count, setCount] = useState(0)
+    const {register , handleSubmit , } = useForm();
+   const handleSubmitForm = (data)=>{
+        console.log("Form submitted");
+       console.log(data);
+   }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+    <form onSubmit={handleSubmit(handleSubmitForm)}  >
+        <label htmlFor='name' >Name : </label>
+        <input type="text" id='name' {...register('name')} placeholder='name' />
+        <br/> <br/>
+        <label htmlFor='emai;' >Email :  </label>
+        <input id='email' placeholder='email' {...register('email')} />
+        <br/><br/>
+        <button type='submit' >Sumbit</button>
+    </form>
     </>
   )
 }
