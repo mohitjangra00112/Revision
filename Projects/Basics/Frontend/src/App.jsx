@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css';
 import {useForm} from 'react-hook-form';
 
+import Data from './components/data';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +27,9 @@ function App() {
         <br/><br/>
         <button type='submit' >Sumbit</button>
     </form>
+
+
+    <Data />
     </>
   )
 }
